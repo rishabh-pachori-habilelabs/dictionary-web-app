@@ -1,0 +1,102 @@
+<div class="container">
+    <app-navbar></app-navbar>
+
+    <article class="home grid" id="home">
+        <section class="home-container container">
+            <div class="home-content ">
+
+                <form class="search" [formGroup]="searchForm" (submit)="searchData()">
+                    <input formControlName="searchInput" type="text" class="search-term"
+                        placeholder="What are you looking for?" id="search">
+                    <button type="submit" class="search-button">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </form>
+
+                <div class="home-info" *ngIf="!dontShow">
+                    <div class="home-info-content">
+                        <h1 class="home-title">{{this.search.word}}</h1>
+                        <h5 class="home-subtitle">{{this.phonetic[1] == undefined
+                            ? this.search.phonetic
+                            : this.phonetic[1].text }}
+                        </h5>
+                    </div>
+                    <div class="home-info-sound">
+                        <button type="button" (click)="playSound()">
+                            <i class="info-sound-logo bi bi-play-circle-fill"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section *ngIf="!dontShow" class="meanings-container container">
+            <div class="meanings-info-content">
+
+                <div class="synonyms-info-content" *ngIf="this.synonyms.length === 0 ? !showInfo : showInfo ">
+                    <p class="synonyms-text">Synonyms</p>
+                    <ul class="synonyms-list" *ngFor="let syn of this.synonyms">
+                        <li class="synonyms-list-content">
+                            {{syn.synonyms}}
+                        </li>
+                    </ul>
+                </div>
+                <div class="antonyms-info-content" *ngIf="this.antonyms.length === 0 ? !showInfo : showInfo ">
+                    <p class="antonyms-text">Antonyms</p>
+                    <ul class="antonyms-list" *ngFor="let syn of this.antonyms">
+                        <li class="antonyms-list-content">
+                            {{syn.antonyms}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="noun-info-content" *ngIf="this.nounMeanin.length === 0 ? !showInfo : showInfo ">
+                    <h6 class="meanings-title">{{this.nounMeanin[0].partOfSpeech}}</h6>
+                    <p class="meanings-subtitle">Meaning</p>
+                    <ul class="meanings-list" *ngFor="let def of this.nounMeanin[0].definitions">
+                        <li class="meanings-list-content">
+                            {{def.definition}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="verb-info-content" *ngIf="this.verbMeanin.length === 0 ? !showInfo : showInfo ">
+                    <h6 class="meanings-title">{{this.verbMeanin[0].partOfSpeech}}</h6>
+                    <p class="meanings-subtitle">Meaning</p>
+                    <ul class="meanings-list" *ngFor="let def of this.verbMeanin[0].definitions">
+                        <li class="meanings-list-content">
+                            {{def.definition}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="adj-info-content" *ngIf="this.adjMeanin.length === 0 ? !showInfo : showInfo ">
+                    <h6 class="adj-title">{{this.adjMeanin[0].partOfSpeech}}</h6>
+                    <p class="meanings-subtitle">Meaning</p>
+                    <ul class="meanings-list" *ngFor="let def of this.adjMeanin[0].definitions">
+                        <li class="meanings-list-content">
+                            {{def.definition}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="adj-info-content" *ngIf="this.advMeanin.length === 0 ? !showInfo : showInfo ">
+                    <h6 class="adv-title">{{this.advMeanin[0].partOfSpeech}}</h6>
+                    <p class="meanings-subtitle">Meaning</p>
+                    <ul class="meanings-list" *ngFor="let def of this.advMeanin[0].definitions">
+                        <li class="meanings-list-content">
+                            {{def.definition}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section *ngIf="dontShow" class="message-container container">
+            <div class="message-content">
+                <h1 class="message">Type your word here.</h1>
+            </div>
+        </section>
+    </article>
+</div>

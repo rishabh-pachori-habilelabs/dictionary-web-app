@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #725EAE;
+    --secondary-color: #cbb6eb;
+    --black-color: #2C2C2C;
+    --gray-color: #413F46;
+    --grayish-color: #E5D6FB;
+    --white-color: #FFF;
+}
+
+
+body:not(.dark-mode-preloading) {
+    transition: all 0.3s linear;
+}
+
+body.dark-mode {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    font-family: var(--font-fam-serif);
+    font-size: 16px;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .home-title,
+body.dark-mode .meanings-title,
+body.dark-mode .meanings-subtitle,
+body.dark-mode .adj-title,
+body.dark-mode .adv-title {
+    color: var(--white-color);
+}
+
+body.dark-mode .message,
+body.dark-mode .home-subtitle,
+body.dark-mode .info-sound-logo,
+body.dark-mode .synonyms-list-content,
+body.dark-mode .antonyms-list-content,
+body.dark-mode .meanings-list-content::before {
+    color: var(--secondary-color);
+}
+
+body.dark-mode .search-button {
+    color: var(--black-color);
+}

@@ -1,0 +1,133 @@
+@media screen and (max-width: 1440px) {
+    .container {
+        max-width: 1440px;
+        margin-left: 5.5rem;
+        margin-right: 5.5rem;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .container {
+        max-width: 870px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .meanings-info-content {
+        display: flex;
+        gap: 0.67rem;
+        flex-direction: column;
+    }
+
+    .meanings-title::before,
+    .adj-title::before,
+    .adv-title::before {
+        width: 60%;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    :root {
+        --biggest-font-size: 2.3rem;
+        --h1-font-size: 1.9rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .775rem;
+        --smaller-font-size: .713rem;
+    }
+
+    .container {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .home-title {
+        font-size: var(--h1-font-size);
+    }
+
+    .home-subtitle {
+        font-size: var(--normal-font-size);
+    }
+
+    .message-content {
+        display: flex;
+        text-align: center;
+    }
+
+    .message {
+        font-size: var(--h1-font-size);
+    }
+
+    .meanings-title {
+        font-size: var(--h2-font-size);
+    }
+
+    .meanings-subtitle {
+        font-size: var(--normal-font-size);
+    }
+
+    .meanings-list {
+        font-size: var(--normal-font-size);
+        margin-left: 1rem;
+    }
+
+    .meanings-title::before {
+        width: 45%;
+        transform: translate(60px, 18px);
+    }
+
+    .adj-title::before,
+    .adv-title::before {
+        width: 38%;
+        transform: translate(80px, 18px);
+    }
+
+    .adj-title,
+    .adv-title {
+        font-size: var(--h3-font-size);
+    }
+
+    .synonyms-text,
+    .antonyms-text {
+        font-size: var(--normal-font-size);
+    }
+
+    .synonyms-list-content,
+    .antonyms-list-content {
+        font-size: var(--normal-font-size);
+        flex-basis: 34%;
+        width: 100%;
+    }
+
+    .info-sound-logo {
+        font-size: var(--biggest-font-size);
+        padding: 0.5rem;
+    }
+
+    .home-subtitle {
+        font-size: var(--normal-font-size);
+    }
+
+    .search-term,
+    .search-term:focus {
+        font-size: var(--small-font-size);
+    }
+
+    .search-button {
+        height: 34px;
+    }
+
+}

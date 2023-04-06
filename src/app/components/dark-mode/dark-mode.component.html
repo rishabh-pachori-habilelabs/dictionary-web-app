@@ -1,0 +1,5 @@
+<input id="darkMode" type="checkbox" [checked]="darkMode$ | async" (change)="onToggle()" class="toggle" />
+<label class="toggle-label" for="darkMode">
+    <span class="moon"><i class="switch-logo bi bi-moon"></i></span>
+    <span class="sun"><i class="switch-logo bi bi-sun"></i></span>
+</label>
